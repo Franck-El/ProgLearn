@@ -2,7 +2,7 @@ git init : initialise le répertoire courant comme étant à indexer par git.
 git add file.extension : ajouter ce fichier à l'index créé par git.
 git commit -m / -am "message" : stocke la version actuelle des fichiers indexés. 
   -m : permet d'écrire un message pour dire ce qu'on a fait comme modif.
-  -a : si le fichier modifié à déjà fait l'objet d'un "git add" sinon ce dernieer est obligatoire.
+  -a : ajouter tous les fichiers déjà indexés au commit.
   --amend -m "new message" : permet de rééditer le message du dernier commit, ne marche  que  si celui-ci n'a pas subi un "git push"
 git status : indique où en est git, ce qui a fait l'objet d'un commit ou non par exemple/
 git log : liste les commit déjà effectués et indique leur SHA, identifiant servant à les consulter.
