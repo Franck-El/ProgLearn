@@ -12,3 +12,4 @@ git reset --hard : efface les modifications apportées depuis le dernier commit.
 git clone lien : copie entièrement le répertoire visé.
 git push origin master : envoie les modifications de la branche master sur le remote (emplacement de stockage ex : pc/GitHub...) origin.
 git pull origin master : fait la manoeuvre inverse en allant chercher seulement les fichiers ayant fait l'objet de modifs.
+git merge branchToMerge : fusionne (ajoute à la suite) la branche cible avec la branche où l'on se situe lors de la commande.
