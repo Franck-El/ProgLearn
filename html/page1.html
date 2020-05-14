@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- indique que le type est html5 -->
+<html> 
+<!-- englobe tout le code -->
+    <head> 
+    	<!-- pas affiché, utile à l'ordi seulement -->
+        <meta charset="utf-8" /> <!-- précise l'encodage -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Page 1</title> <!-- le titre de l'onglet, aussi affiché sur google -->
+    </head>
+
+    <body> 
+    	<!-- contient le code affiché, le corps -->
+    	<h1 id="hautDuSite">Titre super important</h1>
+        <!-- id me sert ici à identifier cette balise ci pour l'ancre en bas
+             page mais il permettra aussi de l'identifier dans la CSS : UTILE -->
+            <p>
+                test
+            </p>
+        <h2>Titre important</h2>
+        <h3>Titre un peu moins important (sous-titre)</h3>
+
+        <h4>Titre pas trop important</h4>
+        <h5>Titre pas important</h5>
+        <h6>Titre vraiment pas important du tout</h6>
+
+    	<p>Bonjour et bienvenue sur mon site !<br />
+    		<!-- passe à la ligne dans un paragraphe mais privilégié le CSS pour gérer l'affichage html sert vraiment à définir les contenus -->
+        Ceci est mon <mark>premier</mark> test alors <em>soyez indulgents</em> <strong>s'il vous plaît</strong>, j'apprends petit à petit comment cela marche.</p> <!-- paragraphe -->
+        <!-- mark, met en valeur : surligne
+        	em = un peu important
+        	strong = très important
+        	le navigateur choisi comment il traduit ça lui même. Ces mots sont 
+        	mieux référencés par Google par exemple.-->
+
+        <ul> <!-- liste non ordonnée : non numérotée -->
+		    <li>Fraises</li>
+		    <li>Framboises</li>
+		    <li>Cerises</li>
+		</ul>
+
+		<ol> <!-- liste ordonnée : numérotée -->
+		    <li>Je me lève.</li>
+		    <li>Je mange et je bois.</li>
+		    <li>Je retourne me coucher.</li>
+		</ol>
+
+		<dl>
+			<dt>terme à définir 1</dt> <dd>définition 1.</dd>
+			<dt>terme à définir 2</dt> <dd>définition 2.</dd>
+		</dl>
+
+        <h1 id="longParagraphes">2 Paragraphes très long</h1>
+        <p class="lipsum">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rutrum odio, nec posuere velit. Duis porttitor volutpat augue quis lacinia. Nam odio ligula, sodales a hendrerit vel, malesuada ac eros. Morbi quis lacus lectus. Mauris scelerisque consequat orci, auctor tempor arcu viverra non. Proin gravida ligula varius ipsum bibendum iaculis non nec ligula. Fusce a nibh dictum, tincidunt tortor id, dictum urna. Sed luctus est id velit vestibulum, vel faucibus neque sollicitudin. Nam euismod, neque vitae rhoncus interdum, mi quam facilisis lectus, id tincidunt ipsum sem nec risus. Morbi mattis augue quis ligula rutrum, in posuere turpis rhoncus. Morbi ultricies orci turpis. Curabitur ac laoreet turpis. Donec libero leo, fringilla in turpis ac, dictum convallis eros. Integer pellentesque nisi dignissim imperdiet imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean consectetur risus et commodo consequat. 
+        </p>
+        <p class="lipsum">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rutrum odio, nec posuere velit. Duis porttitor volutpat augue quis lacinia. Nam odio ligula, sodales a hendrerit vel, malesuada ac eros. Morbi quis lacus lectus. Mauris scelerisque consequat orci, auctor tempor arcu viverra non. Proin gravida ligula varius ipsum bibendum iaculis non nec ligula. Fusce a nibh dictum, tincidunt tortor id, dictum urna. Sed luctus est id velit vestibulum, vel faucibus neque sollicitudin. Nam euismod, neque vitae rhoncus interdum, mi quam facilisis lectus, id tincidunt <span class="motParticulier">ipsum</span> sem nec risus. Morbi mattis augue quis ligula rutrum, in posuere turpis rhoncus. Morbi ultricies orci turpis. Curabitur ac laoreet turpis. Donec libero leo, fringilla in turpis ac, dictum convallis eros. Integer pellentesque nisi dignissim imperdiet imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean consectetur risus et commodo consequat. 
+        </p>
+        <p class="lipsum">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rutrum odio, nec posuere velit. Duis porttitor volutpat augue quis lacinia. Nam odio ligula, sodales a hendrerit vel, malesuada ac eros. Morbi quis lacus lectus. Mauris scelerisque consequat orci, auctor tempor arcu viverra non. Proin gravida ligula varius ipsum bibendum iaculis non nec ligula. Fusce a nibh dictum, tincidunt tortor id, dictum urna. Sed luctus est id velit vestibulum, vel faucibus neque sollicitudin. Nam euismod, neque vitae rhoncus interdum, mi quam facilisis lectus, id tincidunt <span class="motParticulier">ipsum</span> sem nec risus. Morbi mattis augue quis ligula rutrum, in posuere turpis rhoncus. Morbi ultricies orci turpis. Curabitur ac laoreet turpis. Donec libero leo, fringilla in turpis ac, dictum convallis eros. Integer pellentesque nisi dignissim imperdiet imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean consectetur risus et commodo consequat. 
+        </p>
+
+        <div>
+            Pouet
+        </div>
+        <!-- span et div ne signifient rien, elles ne servent qu'à encadrer pour pouvoir appliquer un attribut. span dans un paragraphe et div en dehors à la même fonction. De plus, div n'est pas un paragraphe, il a le statut de "on sait pas trop" -->
+
+		<p><a href="https://openclassrooms.com" title="Vous ne le regretterez pas !" target="_blank">OpenClassrooms</a> <br/>
+		<a href="dossierAvecLaPage2/page2.html">Page 2 de mon site</a></p>
+        <p><a href="#hautDuSite">Retourner en haut du site</a></p>
+        <p><a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a></p>
+        <p><a href="fichierCompresse.zip">Télécharger le fichier</a></p>
+        <!-- ATTENTION les & d'un lien doivent être remplacés par &amp -->
+        <!-- le texte en title s'affiche en infobulle au passage de la souris. Définir target="_blank" force l'ouverture dans un autre onglet mais mieux vaut laisser le choix à l'utilisateur pour éviter de perturber sa navigation à tort -->
+
+        <p><a href="page3.html"><img src="images/balisesOrganisation.png" alt="Image récap des balise pour s'organiser"></a></p>
+
+    </body>
+</html>

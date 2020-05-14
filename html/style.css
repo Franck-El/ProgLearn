@@ -1,0 +1,166 @@
+* /*tout est en gras*/
+{
+	background-color: grey; 
+	/* change la couleur de fond ou background-image pour... une image
+	dont on indique le chemin via url("chemin")
+	Par défaut, l'image de fond est répétée en mosaïque. Vous pouvez
+	changer cela avec la propriété background-repeat : repeat/no-repeat/
+	repeat-x/y
+	background-position: top right;
+	ou le plus fort, tout est enchainé et il peut y avoir  plusieurs
+	images de fond, la première à l'avant plan :
+	background: url("soleil.png") fixed no-repeat top right, url("neige.png") fixed;
+	*/
+	background-attachment: fixed; /* Le fond restera fixe ou scroll */
+	font-weight: bold; /*p-e normal*/
+	font-style: normal; /*p-e italic ou oblique */
+}
+
+/*
+balise
+{
+    font-family: police1, police2, police3, serif;
+}
+Si le navigateur du receveur ne possède pas la police1 il affichera
+alors avec la 2 et ainsi de suite. Serif ou sans-serif, sont deux
+polices par défaut, c'est toujours mieux que de ne rien afficher.
+ATTENTION ecrire entre guillemets les polices dont le nom présente un
+espace. Voir openclassrooms pour connaître les plus répandues.
+*/
+
+h1, ol /*h1 et ol sont en bleu*/
+{
+	color: blue;
+}
+
+h1{
+	border: 3px blue inset;
+    border-left: 2px solid green;
+    border-right: 2px solid green;
+}
+
+h1 + p /*les paragraphes qui suivent immédiatement h1*/
+{
+	color: #DEB887;
+	font-weight: lighter;
+	font-size: medium; /*xx-small,x-small,small,medium,large,x...*/
+	/*font-size est aussi possible en pourcentages (em/ex),
+		cm/mm/px (pixels) mais moins intéressants car peu souples donc
+		si l'utilisateur est mal voyant le texte n'est pas adapté, c'est
+		pas top*/
+}
+
+h1 em /*les em qui se trouvent DANS les h1*/
+{
+	color: #DEB887;
+	font-weight: lighter;
+}
+
+.lipsum /* se réfère aux balises possédant la classe lipsum*/
+{
+	color: red;
+}
+
+/*remarque : la classe a l'avantage sur les demande plus générales
+ainsi ici le paragraphe lipsum est rouge bien qu'il suive h1 car la
+définition de classe en modifie la couleur. Le font weight par contre
+n'est pas modifié donc la règle générale des paragraphes
+suivant h1 s'applique (lighter) au détriment de la règle la plus
+générale (bold).*/
+
+#longParagraphes
+{
+	/* se réfère à la balise possédant l'id longParagraphes
+	contrairement à la classe, deux balises ne peuvent pas avoir
+	le même id*/
+	color: yellow;
+}
+
+.motParticulier
+{
+	color: green;
+}
+
+/* toutes les balises a qui possède l'attribut title*/
+a[title]
+{
+
+}
+
+a[title="Cliquez ici"] /*dont le title est "Cliquez ici", fort !*/
+{
+
+}
+
+a[title*="ici"] /*dont le title contient le mot "ici", encore + fort !*/
+{
+
+}
+
+h1
+{
+    text-decoration: blink;
+}
+.souligne
+{
+    text-decoration: underline;
+}
+.barre
+{
+    text-decoration: line-through;
+}
+.ligne_dessus
+{
+    text-decoration: overline;
+}
+/* par defaut text-decoration: none*/
+
+p{
+	text-align: justify; /*left, right, center*/
+	background-color: rgba(255, 0, 0, 0.1); /* Fond rouge à moitié transparent */
+	/*background-color: rgb(255,0,0); 
+	 Pour les navigateurs anciens, du coup régler opacité avec opacity */
+	border-radius: 10px 5px 10px 5px;
+}
+
+.imageflottante{
+	float: left;
+}
+
+
+.dessous{
+    clear: both;
+}
+
+h2{
+	text-shadow: 2px 2px 4px black;
+	border: 3px blue outset;
+	box-shadow: 6px 6px 0px black;
+}
+
+a /* Liens par défaut (non survolés) */
+{
+   text-decoration: none;
+   color: blue;
+   font-style: italic;
+}
+
+a:hover /* Apparence au survol des liens */
+{
+   text-decoration: underline;
+   color: green;
+}
+
+a:active /* Quand le visiteur clique sur le lien */
+{
+    background-color: #FFCC66;
+}
+
+a:visited /* Quand le visiteur a déjà vu la page concernée */
+{
+    color: purple;
+}
+
+h3{
+	opacity: 0.5;
+}
