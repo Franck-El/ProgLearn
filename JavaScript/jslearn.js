@@ -414,3 +414,59 @@ function askWeather(){
   
 let ask_weather = document.getElementById("ask-weather"); // récupérer le bouton à cliquer
 ask_weather.addEventListener("click", askWeather); // lorsqu'on clique dessus lancer askWeather
+
+// ========================================================================================================
+// Valider les données saisies
+/////////// EXEMPLE ////////////////
+
+let codeBox = document.getElementById("code"); // Récupérer l'elt d'id code
+codeBox.addEventListener('input',function(event){ // Ecouter les input de cet élément et les envoyer à la fonction
+  let code = event.target.value; // Récupérer ce qui est entré en input par l'utilisateur
+  let code_validation = document.getElementById("code-validation");
+  let submit = document.getElementById("submit-btn");
+  if (/^CODE-/.test(code)){ // Si code commence par CODE-
+      code_validation = "Code valide"; // indiquer que c'est valide dans l'attribut code-validation de la div HTML
+      submit.removeAttribute("disabled"); // supprimer cet attribut empêchant d'utiliser le bouton d'envoi des datas
+  } else {
+      code_validation = "Code invalide";
+      submit.setAttribute("disabled","true"); // Remettre en place l'attribut 
+  }
+})
+
+// ========================================================================================================
+// Méthode POST (PUT fonctionne de la même façon)
+
+var request = new XMLHttpRequest(); // Créer une requête
+request.open("POST", "http://url-service-web.com/api/users"); // de type POST à l'url indiqué
+request.setRequestHeader("Content-Type", "application/json"); // Préciser que le contenu envoyé sera du JSON
+request.send(JSON.stringify(jsonBody)); // Transformer notre JS en JSON : l'inverse du parse en fait
+
+/////////// EXEMPLE ////////////////
+
+function send(){
+    var toSend = {                                       // 2.1) Créer la variable toSend
+        value: document.getElementById("value").value    // avec un champ value contenant notre entrée texte
+    }
+
+    var request = new XMLHttpRequest();                  // 2.2) créer une requête
+    request.open("POST", "https://mockbin.com/request"); // de type POST à l'URL indiqué
+    request.setRequestHeader("Content-Type", "application/json"); // dont le contenu envoyé sera du JSON
+    request.send(JSON.stringify(toSend));                 // 2.3) envoyer toSend au format json
+
+    request.onreadystatechange = function() {             // 2.4) lors d'un changement d'état de la requête
+        var res = document.getElementById("result");      // récupérer l'elt d'id "result" dans res
+        if (this.readyState == 4 && this.status == 200) { // si l'envoie de la requête est terminé et réussi
+            var response = request.responseText;          // récupérer toute la réponse à la requête (en json)
+            var json = JSON.parse(response);              // traduire la réponse en js (donne accès aux champs)
+            json = json.postData.text;                    // récupérer le champ text du champ postData de json   
+            json = JSON.parse(json);                      // le contenu du champ est en json => traduire en js
+            res.textContent = json.value;                 // mettre le champ value de json dans res.textContent
+        }
+    };
+};
+    
+var form = document.getElementById("button");   // 1) Ecouter le bouton grâce à son id
+form.addEventListener("click", function(event){ // 2) Quand on clique dessus
+    event.preventDefault();                     // Ne pas faire l'action par défaut
+    send();                                     // Lancer la fonction send
+});
