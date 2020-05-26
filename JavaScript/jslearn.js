@@ -470,3 +470,25 @@ form.addEventListener("click", function(event){ // 2) Quand on clique dessus
     event.preventDefault();                     // Ne pas faire l'action par défaut
     send();                                     // Lancer la fonction send
 });
+
+// ========================================================================================================
+// Asynchronisme : les fonctions asynchrones sont éxécutées à un moment différent de leur lecture
+
+setTimeout(fonction,temps); // la fonction sera éxécutée au minimum au bout du temps (ms)
+clearTimeout;               // avant qu'elle ne soit effectuée pour annuler l'asynchrone
+
+// setInterval (clearInterval) ou setImmediate existent aussi, voir aussi nextTick
+
+/* Callback : cette fonction s'appelle au sein d'une fonction asynchrone
+ex, ici la fonction n'est lancée que lors du clic et non à sa lecture :
+addEventListener('click',fonction(err,data){
+    if (err) {
+        throw err;
+    }
+    // Do something with data
+    });
+data représente les données à passer et err permet de récupérer l'erreur qui est null/undifined si tout va bien
+*/
+
+
+
