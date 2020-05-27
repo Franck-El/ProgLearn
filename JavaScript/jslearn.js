@@ -487,8 +487,75 @@ addEventListener('click',fonction(err,data){
     }
     // Do something with data
     });
-data représente les données à passer et err permet de récupérer l'erreur qui est null/undifined si tout va bien
+
+
+    data représente les données à passer et err permet de récupérer l'erreur qui est null/undifined si tout va bien
+
+ Promises : on a la promesse d'avoir un futur résultat, qu'il soit bon ou mauvais => le code peut continuer
+elles ont l'avantage de se chaîner de manière plus lisible que l'imbriquation de plusieurs callback.
+
+Dans l'exemple suivant, imaginons que j'envoie 2:
+La première renverra 3 et le résultat ser immédiatement utilisé dans la suivante qui renvoie une erreur. La 
+troisième n'est donc pas lu car ne s'intéresse qu'aux datas pas aux erreurs, la quatrième traite l'erreur
+en renvoyant 5. La cinquième en fait quelque chose.
 */
+returnAPromiseWithNumber2()
+    .then(function(data) { // then récupère des datas, ici 2
+        return data + 1;
+    })
+    .then(function(data) { // Data = 3
+        throw new Error('error'); // lève une exception Error est un objet
+    })
+    .then(function(data) {
+        // Non éxécuté  
+    })
+    .catch(function(err) { // récupère une erreur
+        return 5;
+    })
+    .then(function(data) { // Data = 5
+        // Do something
+    });
 
+// async and await
+async function fonctionAsynchrone1() {/* code asynchrone */}
+async function fonctionAsynchrone2() {/* code asynchrone */}
 
+async function fonctionAsynchrone3() {
+ const value1 = await fonctionAsynchrone1(); // attendre le résultat de fonctionAsynchrone1
+ const value2 = await fonctionAsynchrone2(); // attendre le résultat de fonctionAsynchrone2
+ return value1 + value2;
+}
 
+// ici les erreurs se gèrent encore par la levée d'une exception en mettant le code dans un try{}catch(e){}
+
+////////////// EXEMPLE ///////////////////
+// Mélange de tout ça
+
+async function getNumber1() {
+    return 10;
+  }
+  
+  async function getNumber2() {
+    return 4;
+  }
+  
+  async function compute(){
+    const val1 = await getNumber1();
+    const val2 = await getNumber2();
+    return val1 + val2;
+  }
+  
+  const promiseToCompute = new Promise((resolve, reject) => { 
+    resolve (compute());
+  });
+  
+  promiseToCompute
+    .then((value) => {
+      const result = document.getElementById("result");
+      result.textContent = value;
+    return value;
+  })
+    .then((value) => {
+      const result = document.getElementById("result");
+      result.textContent = result.textContent + ' puis ' + (value + 2);
+  });
