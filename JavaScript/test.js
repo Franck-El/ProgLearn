@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 
 async function getNumber1() {
 	return 10;
@@ -12,8 +13,8 @@ async function compute(){
 	const val2 = await getNumber2();
 	return val1 + val2;
 }
-  
-const promiseToCompute = new Promise((resolve, reject) => { 
+
+const promiseToCompute = new Promise((resolve) => { 
 	resolve (compute());
 });
   
