@@ -1,3 +1,10 @@
+// Généralité =============================================
+/* Placer le js dans un fichier.js externe est 1) plus propre, 2) plus rapide que directe dans la page
+HTML car il reste ainsi en cache plutôt que d'être recharger chaque fois.
+
+Aussi : l'insérer en toute fin de body est plus efficace pour un affichage rapide de la page.
+*/
+
 // ========================================================================================================
 // variable (types : string, number, boolean)
 
