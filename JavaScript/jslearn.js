@@ -6,7 +6,8 @@ Aussi : l'insérer en toute fin de body est plus efficace pour un affichage rapi
 */
 
 // ========================================================================================================
-// variable (types : string, number, boolean)
+// variable (types : string, number, boolean) /!\ elles sont globales donc si je ne les passes pas en arg
+// alors je peux les utiliser dans une sous fonction mais je les modifies vraiment du coup. Les var
 
 let episodeTitle = "Batman";
 let episodeDuration = 45;
@@ -248,6 +249,14 @@ while (seatsLeft > 0 && passengersStillToBoard > 0) {
 
 console.log(passengersBoarded); // imprime 8, car il y a 8 passagers pour 10 sièges
 
+// ou do{something}while(true);
+
+/* En JavaScript, il est déconseillé de déclarer des variables au sein d'une boucle (entre les accolades),
+pour une raison logique : il n'y a en effet pas besoin de déclarer une même variable à chaque passage dans
+la boucle ! Il est conseillé de déclarer les variables directement dans le bloc d'initialisation.
+
+/!\ une fois que la boucle est exécutée, ses variables existent toujours
+*/
 // ========================================================================================================
 // errors
 
